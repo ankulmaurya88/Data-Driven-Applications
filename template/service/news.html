@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Tesla News</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/news.css' %}">  
+</head>
+<body>
+
+    <h1>Latest Tesla News</h1>
+    <div class="news-container">
+        {% for article in news_data %}
+            <div class="news-card">
+                <h2>{{ article.title }}</h2>
+                <p><strong>Author:</strong> {{ article.author|default:"Unknown" }}</p>
+                <p><strong>Published:</strong> {{ article.publishedAt|date:"Y-m-d" }}</p>
+                <a href="{{ article.url }}" target="_blank">Read more</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <br>
+    <form action="{% url 'quizengine:service' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">back</button>
+      </form>
+
+</body>
+</html>

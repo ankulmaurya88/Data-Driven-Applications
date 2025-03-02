@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch YouTube Comments</title>
+    <link rel="stylesheet" href="{% static 'styles/fetchcomments.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fetch YouTube Comments</h1>
+        <p>Enter a YouTube video URL to retrieve comments.</p>
+
+        <form method="POST" action="{% url 'quizengine:get_video_comments' %}">
+            {% csrf_token %}
+            <input type="text" name="video_url" placeholder="Enter YouTube video link" required>
+            <button type="submit">Fetch Comments</button>
+        </form>
+
+        <form action="{% url 'quizengine:service' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="back-btn">Back to Services</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch YouTube Comments</title>
+</head>
+<body>
+    <h1>Enter YouTube Video URL</h1>
+    <h1>Enter YouTube Video URL</h1>
+    <form method="POST" action="{% url 'quizengine:get_video_comments' %}">
+        {% csrf_token %}
+        <input type="text" name="video_url" placeholder="Enter YouTube video link" required>
+        <button type="submit">Fetch Comments</button>
+    </form>
+    <br>
+    <form action="{% url 'quizengine:service' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">back</button>
+      </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>You tube video comment fetcher</H1>
+    <h2>Enter YouTube Video URL</h2>
+            <hr>
+            <form method="POST" action="{% url 'quizengine:get_video_comments' %}">
+                {% csrf_token %}
+                <input type="text" name="video_url" placeholder="Enter YouTube video link" required>
+                <button type="submit">Fetch Comments</button>
+            </form>
+        </div>
+
+
+        <br>
+        <br>
+    <form action="{% url 'quizengine:service' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">back</button>
+      </form>
+</body>
+</html> -->

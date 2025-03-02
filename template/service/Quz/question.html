@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Questions</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/question.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Test Your Knowledge Quiz Time</h1>
+
+        <form method="POST" action="{% url 'quizengine:submit_answer' %}" class="quiz-form">
+            {% csrf_token %}
+            
+            {% for question in questions %}
+                <div class="question-box">
+                    <p class="question-text"><strong>{{ forloop.counter }}. {{ question.question_title }}</strong></p>
+                    
+                    <input type="hidden" name="question_id_{{ forloop.counter }}" value="{{ question.id }}">
+                    
+                    <label class="option">
+                        <input type="radio" name="answer_{{ forloop.counter }}" value="{{ question.option1 }}"> 
+                        {{ question.option1 }}
+                    </label>
+                    
+                    <label class="option">
+                        <input type="radio" name="answer_{{ forloop.counter }}" value="{{ question.option2 }}"> 
+                        {{ question.option2 }}
+                    </label>
+                    
+                    <label class="option">
+                        <input type="radio" name="answer_{{ forloop.counter }}" value="{{ question.option3 }}"> 
+                        {{ question.option3 }}
+                    </label>
+                    
+                    <label class="option">
+                        <input type="radio" name="answer_{{ forloop.counter }}" value="{{ question.option4 }}"> 
+                        {{ question.option4 }}
+                    </label>
+                </div>
+            {% empty %}
+                <p class="no-questions">No questions available.</p>
+            {% endfor %}
+
+            <button type="submit" class="btn">Submit Quiz</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

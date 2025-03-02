@@ -1,0 +1,90 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Start Your Quiz Now!</title>
+   
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/quiz.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Welcome to the Quiz!</h1>
+        <p>Test your knowledge with fun and challenging questions.</p>
+
+        <a href="{% url 'quizengine:get_question' %}">
+            <button class="start-btn">Start Quiz 🚀</button>
+        </a>
+
+        <form action="{% url 'quizengine:service' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="back-btn">⬅ Back</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>here quize</p>
+
+    <br>
+    <br><br>
+    <a href="{% url 'quizengine:get_question' %}"><button>Start Quiz</button></a>
+
+    <br>
+
+
+    <form action="{% url 'quizengine:service' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">back</button>
+      </form> -->
+
+<!-- 
+</body>
+</html>  -->

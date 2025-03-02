@@ -1,0 +1,77 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+/* Header */
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Question Box */
+.question-box {
+    background: #eef;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Question Text */
+.question-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Option Styling */
+.option {
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.option input {
+    margin-right: 8px;
+}
+
+/* No Questions Message */
+.no-questions {
+    color: red;
+    font-weight: bold;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

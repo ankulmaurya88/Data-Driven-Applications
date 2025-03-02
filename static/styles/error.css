@@ -1,0 +1,47 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #ff6b6b, #f7d794);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Error Container */
+.error-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+h1 {
+    color: #ff3b3b;
+    font-size: 24px;
+}
+
+/* Error Message */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Retry Button */
+.retry-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ff3b3b;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.retry-btn:hover {
+    background-color: #e22e2e;
+}

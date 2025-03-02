@@ -1,0 +1,37 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/about.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>About Me</h1>
+        <p>
+            Hello! I am a <strong>Python Developer</strong> and <strong>AI Engineer</strong> with a passion for building intelligent systems.  
+            I have completed my <strong>B.Tech in Computer Science with a specialization in Artificial Intelligence</strong>.
+        </p>
+        <p>
+            I specialize in **Machine Learning, Deep Learning, and NLP**, developing AI-driven solutions that enhance automation and decision-making.  
+            My expertise includes working with **Python, TensorFlow, PyTorch, Flask, and cloud deployment technologies**.
+        </p>
+        <p>
+            Currently, I am working on this project to **showcase my AI and software development skills** while seeking job opportunities  
+            where I can contribute and grow as an AI Engineer.
+        </p>
+
+        <form action="{% url 'quizengine:home' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn">Back to Home</button>
+        </form>
+    </div>
+
+</body>
+</html>

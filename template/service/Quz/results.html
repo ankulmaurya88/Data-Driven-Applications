@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/results.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Results</h1>
+        
+        <div class="score-card">
+            <p><strong>Score:</strong> <span class="highlight">{{ score|floatformat:2 }}%</span></p>
+            <p><strong>Total Questions:</strong> <span class="highlight">{{ total_questions }}</span></p>
+            <p><strong>Correct Answers:</strong> <span class="correct">{{ correct_count }}</span></p>
+            <p><strong>Incorrect Answers:</strong> <span class="incorrect">{{ incorrect_count }}</span></p>
+        </div>
+
+        <h2>Answered Questions</h2>
+        <ul class="question-list">
+            {% for session in quiz_attempts %}
+                <li class="question-item">
+                    <strong>Question:</strong> {{ session.question.question_title }} <br>
+                    <strong>Your Answer:</strong> <span class="answer">{{ session.user_answer }}</span> <br>
+                    <strong>Correct:</strong> 
+                    <span class="status {% if session.correct %}correct{% else %}incorrect{% endif %}">
+                        {% if session.correct %}✅{% else %}❌{% endif %}
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{% url 'quizengine:start_quiz' %}" class="btn">Restart Quiz</a>
+    </div>
+</body>
+</html>
+
+
+

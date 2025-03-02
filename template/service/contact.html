@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/contact.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Contact Me</h1>
+        <p>If you have any inquiries or opportunities, feel free to reach out to me.</p>
+
+        <div class="contact-info">
+            <p><strong>Email:</strong> your-email@example.com</p>
+            <p><strong>Phone:</strong> +91 XXXXXXXXXX</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/your-github" target="_blank">github.com/your-github</a></p>
+        </div>
+
+        <h2>Send Me a Message</h2>
+        <form action="{% url 'quizengine:contact' %}" method="post">
+            {% csrf_token %}
+            
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <form action="{% url 'quizengine:home' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="back-btn">Back to Home</button>
+        </form>
+    </div>
+
+</body>
+</html>

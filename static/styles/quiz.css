@@ -1,0 +1,60 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+h1 {
+    color: #ff5733;
+    font-size: 24px;
+}
+
+/* Paragraph */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.start-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.start-btn:hover {
+    background-color: #218838;
+}
+
+.back-btn {
+    margin-top: 15px;
+    background-color: #dc3545;
+    color: white;
+}
+
+.back-btn:hover {
+    background-color: #c82333;
+}

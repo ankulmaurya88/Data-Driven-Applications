@@ -1,0 +1,83 @@
+
+
+
+
+{% load static %}  <!-- Load static files -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | My Website</title>
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">  <!-- Link external CSS -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to My Website</h1>
+        <p>Your one-stop platform for AI and Python development</p>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section class="container">
+            <div class="section">
+                <h2>About Me</h2>
+                <p>I'm a Python Developer & AI Engineer. Passionate about building AI-driven solutions.</p>
+                <form action="{% url 'quizengine:about' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">Learn More</button>
+                </form>
+            </div>
+
+            <div class="section">
+                <h2>Contact</h2>
+                <p>Want to collaborate or have queries? Reach out to me!</p>
+                <form action="{% url 'quizengine:contact' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">Contact Me</button>
+                </form>
+            </div>
+
+            {% if user.is_authenticated %}
+            <div class="section">
+                <h2>Services</h2>
+                <p>Explore the AI & Python development services I offer.</p>
+                <form action="{% url 'quizengine:service' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">Explore Services</button>
+                </form>
+            </div>
+            {% endif %}
+        </section>
+
+        <section class="auth-section">
+            {% if user.is_authenticated %}
+            <h2>Hello, {{ user.first_name }}</h2>
+            <a href="{% url 'accounts:logout' %}" class="logout-btn">Logout</a>
+            {% else %}
+            <div>
+                <h2>Join Us</h2>
+                <form action="{% url 'accounts:login_view' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <form action="{% url 'accounts:register' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+            </div>
+            {% endif %}
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 | My Portfolio</p>
+        <p>Email: <a href="mailto:ankulmaurya88@gmail.com">ankulmaurya88@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>

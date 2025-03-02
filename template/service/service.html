@@ -1,0 +1,80 @@
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="{% static 'styles/service.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Our Services</h1>
+        <p>Explore our services below.</p>
+    </div>
+
+
+        <!-- YouTube Video Comments Section -->
+
+
+    <div> 
+        <h2>YouTube Video Comments </h2>
+    <form action="{% url 'quizengine:fetch_comments_view' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Click Here</button>
+    </form>
+     </div>
+
+        <!-- Quiz Section -->
+        <div class="service-box">
+            <h2>Take a Quiz</h2>
+            <form action="{% url 'quizengine:creatingQuiz' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Start Quiz</button>
+            </form>
+        </div>
+
+        <!-- News Section -->
+        <div class="service-box">
+            <h2>Latest News</h2>
+            <form action="{% url 'quizengine:news_view' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Read News</button>
+            </form>
+        </div>
+
+        <!-- web Scaper-->
+
+        <div class="service-box">
+            <h2>Scaper</h2>
+            <form action="{% url 'quizengine:web_saper' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">click here</button>
+            </form>
+        </div>
+
+
+        <!-- Moive  Recommendations-->
+
+        <div class="service-box">
+            <h2>Moive  Recommendations</h2>
+            <form action="{% url 'quizengine:recommender' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">click here</button>
+            </form>
+        </div>
+
+
+        <!-- Back Button -->
+        <div class="service-box">
+            <form action="{% url 'quizengine:home' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Back to Home</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
